@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "..\Sandbox\Sandbox.vcxproj", "{DC4B6AE2-2FF1-4E2C-9790-0204C4C4B0DC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShoonyaGL", "ShoonyaGL\ShoonyaGL.vcxproj", "{049620BA-2714-4355-87D2-A12465A25BC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{049620BA-2714-4355-87D2-A12465A25BC1}.Debug|x64.ActiveCfg = Debug|x64
+		{049620BA-2714-4355-87D2-A12465A25BC1}.Debug|x64.Build.0 = Debug|x64
+		{049620BA-2714-4355-87D2-A12465A25BC1}.Release|x64.ActiveCfg = Release|x64
+		{049620BA-2714-4355-87D2-A12465A25BC1}.Release|x64.Build.0 = Release|x64
+		{DC4B6AE2-2FF1-4E2C-9790-0204C4C4B0DC}.Debug|x64.ActiveCfg = Debug|x64
+		{DC4B6AE2-2FF1-4E2C-9790-0204C4C4B0DC}.Debug|x64.Build.0 = Debug|x64
+		{DC4B6AE2-2FF1-4E2C-9790-0204C4C4B0DC}.Release|x64.ActiveCfg = Release|x64
+		{DC4B6AE2-2FF1-4E2C-9790-0204C4C4B0DC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AF51A8A-5B25-4FD5-B956-FB2ABFD2BCA2}
+	EndGlobalSection
+EndGlobal
