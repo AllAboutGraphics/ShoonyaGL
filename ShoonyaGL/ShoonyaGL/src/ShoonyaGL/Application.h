@@ -7,7 +7,7 @@ namespace SGL
 	{
 		public:
 			Application();
-			~Application();
+			virtual ~Application();
 
 			void Run();
 	};
