@@ -57,6 +57,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -71,6 +73,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,12 +84,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ShoonyaGL\Log.h" />
     <ClInclude Include="src\ShoonyaGL\Application.h" />
     <ClInclude Include="src\ShoonyaGL\Core.h" />
     <ClInclude Include="src\ShoonyaGL.h" />
     <ClInclude Include="src\ShoonyaGL\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ShoonyaGL\Log.cpp" />
     <ClCompile Include="src\ShoonyaGL\Application.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

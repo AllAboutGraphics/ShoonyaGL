@@ -8,4 +8,3 @@ class SandboxApp : public SGL::Application
 		SandboxApp();
 		~SandboxApp();
 };
-

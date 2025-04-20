@@ -27,9 +27,15 @@
     <ClInclude Include="src\ShoonyaGL\EntryPoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\ShoonyaGL\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ShoonyaGL\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShoonyaGL\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
