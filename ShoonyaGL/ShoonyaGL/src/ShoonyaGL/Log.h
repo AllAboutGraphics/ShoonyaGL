@@ -18,11 +18,13 @@ namespace SGL
 	};
 }
 
+//For SDK
 #define SGL_CORE_TRACE(...) ::SGL::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define SGL_CORE_INFO(...)	::SGL::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define SGL_CORE_WARN(...)	::SGL::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define SGL_CORE_ERROR(...) ::SGL::Log::GetCoreLogger()->error(__VA_ARGS__)
 #define SGL_CORE_FATAL(...) ::SGL::Log::GetCoreLogger()->fatal(__VA_ARGS__)
+//For Client APP
 #define SGL_TRACE(...)		::SGL::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define SGL_INFO(...)		::SGL::Log::GetClientLogger()->info(__VA_ARGS__)
 #define SGL_WARN(...)		::SGL::Log::GetClientLogger()->warn(__VA_ARGS__)
