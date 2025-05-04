@@ -44,7 +44,8 @@ project "ShoonyaGL"
 		local targetDir = "../Sandbox/bin/" .. outputdir .. "/Sandbox"
 		postbuildcommands
 		{
-			"{MKDIR} " .. targetDir,
+			--"{MKDIR} " .. targetDir,
+			'if not exist "' .. targetDir .. '" mkdir "' .. targetDir .. '"',
 			("{COPY} " .. dllPath .. " " .. targetDir)
 		}
 

@@ -98,7 +98,7 @@
       <ImportLibrary>bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF NOT EXIST ..\Sandbox\bin\Debug-windows-x86_64\Sandbox (mkdir ..\Sandbox\bin\Debug-windows-x86_64\Sandbox)
+      <Command>if not exist "../Sandbox/bin/Debug-windows-x86_64/Sandbox" mkdir "../Sandbox/bin/Debug-windows-x86_64/Sandbox"
 IF EXIST bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -124,7 +124,7 @@ IF EXIST bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bi
       <ImportLibrary>bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF NOT EXIST ..\Sandbox\bin\Release-windows-x86_64\Sandbox (mkdir ..\Sandbox\bin\Release-windows-x86_64\Sandbox)
+      <Command>if not exist "../Sandbox/bin/Release-windows-x86_64/Sandbox" mkdir "../Sandbox/bin/Release-windows-x86_64/Sandbox"
 IF EXIST bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
@@ -144,7 +144,7 @@ IF EXIST bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I 
       <ImportLibrary>bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF NOT EXIST ..\Sandbox\bin\Dist-windows-x86_64\Sandbox (mkdir ..\Sandbox\bin\Dist-windows-x86_64\Sandbox)
+      <Command>if not exist "../Sandbox/bin/Dist-windows-x86_64/Sandbox" mkdir "../Sandbox/bin/Dist-windows-x86_64/Sandbox"
 IF EXIST bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
