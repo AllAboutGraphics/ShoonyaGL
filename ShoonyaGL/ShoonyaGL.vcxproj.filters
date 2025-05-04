@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ShoonyaGL">
+      <UniqueIdentifier>{3926AB1C-A590-5F93-EECE-10395A783DE8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Application.h">
+      <Filter>ShoonyaGL</Filter>
+    </ClInclude>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Core.h">
+      <Filter>ShoonyaGL</Filter>
+    </ClInclude>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\EntryPoint.h">
+      <Filter>ShoonyaGL</Filter>
+    </ClInclude>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Log.h">
+      <Filter>ShoonyaGL</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Application.cpp">
+      <Filter>ShoonyaGL</Filter>
+    </ClCompile>
+    <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Log.cpp">
+      <Filter>ShoonyaGL</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

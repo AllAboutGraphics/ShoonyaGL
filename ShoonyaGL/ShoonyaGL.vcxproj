@@ -15,27 +15,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F4C124E3-60A1-A37E-69B9-2E55D5170AE0}</ProjectGuid>
+    <ProjectGuid>{3926AB1C-A590-5F93-EECE-10395A783DE8}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Sandbox</RootNamespace>
+    <RootNamespace>ShoonyaGL</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
@@ -55,31 +55,31 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>bin\Debug-windows-x86_64\Sandbox\</OutDir>
-    <IntDir>bin-int\Debug-windows-x86_64\Sandbox\</IntDir>
-    <TargetName>Sandbox</TargetName>
-    <TargetExt>.exe</TargetExt>
+    <OutDir>bin\Debug-windows-x86_64\ShoonyaGL\</OutDir>
+    <IntDir>bin-int\Debug-windows-x86_64\ShoonyaGL\</IntDir>
+    <TargetName>ShoonyaGL</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>bin\Release-windows-x86_64\Sandbox\</OutDir>
-    <IntDir>bin-int\Release-windows-x86_64\Sandbox\</IntDir>
-    <TargetName>Sandbox</TargetName>
-    <TargetExt>.exe</TargetExt>
+    <OutDir>bin\Release-windows-x86_64\ShoonyaGL\</OutDir>
+    <IntDir>bin-int\Release-windows-x86_64\ShoonyaGL\</IntDir>
+    <TargetName>ShoonyaGL</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>bin\Dist-windows-x86_64\Sandbox\</OutDir>
-    <IntDir>bin-int\Dist-windows-x86_64\Sandbox\</IntDir>
-    <TargetName>Sandbox</TargetName>
-    <TargetExt>.exe</TargetExt>
+    <OutDir>bin\Dist-windows-x86_64\ShoonyaGL\</OutDir>
+    <IntDir>bin-int\Dist-windows-x86_64\ShoonyaGL\</IntDir>
+    <TargetName>ShoonyaGL</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_DEBUG;SGL_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\ShoonyaGL\Vendor\spdlog\include;..\ShoonyaGL\ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;SGL_DEBUG;SGL_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -91,18 +91,23 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST ..\Sandbox\bin\Debug-windows-x86_64\Sandbox (mkdir ..\Sandbox\bin\Debug-windows-x86_64\Sandbox)
+IF EXIST bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\ShoonyaGL\Vendor\spdlog\include;..\ShoonyaGL\ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;SGL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -113,36 +118,46 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST ..\Sandbox\bin\Release-windows-x86_64\Sandbox (mkdir ..\Sandbox\bin\Release-windows-x86_64\Sandbox)
+IF EXIST bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\ShoonyaGL\Vendor\spdlog\include;..\ShoonyaGL\ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST ..\Sandbox\bin\Dist-windows-x86_64\Sandbox (mkdir ..\Sandbox\bin\Dist-windows-x86_64\Sandbox)
+IF EXIST bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll ..\Sandbox\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ShoonyaGL\ShoonyaGL.vcxproj">
-      <Project>{3926AB1C-A590-5F93-EECE-10395A783DE8}</Project>
-    </ProjectReference>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Application.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Core.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\EntryPoint.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Log.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\SandboxApp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\SandboxApp.h" />
+    <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Application.cpp" />
+    <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
