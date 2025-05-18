@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;SGL_DEBUG;SGL_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -107,7 +107,7 @@ IF EXIST bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bi
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;SGL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -133,7 +133,7 @@ IF EXIST bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I 
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -153,6 +153,10 @@ IF EXIST bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Application.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Core.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\EntryPoint.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\ApplicationEvent.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\Event.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\KeyEvent.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\MouseEvent.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Log.h" />
   </ItemGroup>
   <ItemGroup>

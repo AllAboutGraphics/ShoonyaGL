@@ -4,6 +4,9 @@
     <Filter Include="ShoonyaGL">
       <UniqueIdentifier>{3926AB1C-A590-5F93-EECE-10395A783DE8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ShoonyaGL\Events">
+      <UniqueIdentifier>{FD7702FA-E970-214C-12A3-06D1FEFA0058}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL.h" />
@@ -16,9 +19,15 @@
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\EntryPoint.h">
       <Filter>ShoonyaGL</Filter>
     </ClInclude>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\Event.h">
+      <Filter>ShoonyaGL\Events</Filter>
+    </ClInclude>
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Log.h">
       <Filter>ShoonyaGL</Filter>
     </ClInclude>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\KeyEvent.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\MouseEvent.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\ApplicationEvent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Application.cpp">

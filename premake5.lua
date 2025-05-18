@@ -26,7 +26,8 @@ project "ShoonyaGL"
 
 	includedirs
 	{
-		"%{prj.name}/Vendor/spdlog/include"
+		"%{prj.name}/Vendor/spdlog/include",
+		"%{prj.name}/ShoonyaGL/src"
 	}
 
 	filter "system:windows"
