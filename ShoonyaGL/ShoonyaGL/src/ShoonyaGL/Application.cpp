@@ -18,7 +18,14 @@ namespace SGL
 	void Application::Run()
 	{
 		WindowResizeEvent e(1280, 720);
-		SGL_TRACE(e.ToString());
+		if (e.IsInCategory(EventCategoryApplication))
+		{
+			SGL_TRACE(e.ToString());
+		}
+		if (e.IsInCategory(EventCategoryInput))
+		{
+			SGL_TRACE(e.ToString());
+		}
 
 		while (true);
 	}
