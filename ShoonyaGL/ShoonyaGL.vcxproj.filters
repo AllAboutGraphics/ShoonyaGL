@@ -19,15 +19,22 @@
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\EntryPoint.h">
       <Filter>ShoonyaGL</Filter>
     </ClInclude>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\ApplicationEvent.h">
+      <Filter>ShoonyaGL\Events</Filter>
+    </ClInclude>
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\Event.h">
+      <Filter>ShoonyaGL\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\KeyEvent.h">
+      <Filter>ShoonyaGL\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\MouseEvent.h">
       <Filter>ShoonyaGL\Events</Filter>
     </ClInclude>
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Log.h">
       <Filter>ShoonyaGL</Filter>
     </ClInclude>
-    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\KeyEvent.h" />
-    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\MouseEvent.h" />
-    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\ApplicationEvent.h" />
+    <ClInclude Include="ShoonyaGL\src\sglpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Application.cpp">
@@ -36,5 +43,6 @@
     <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Log.cpp">
       <Filter>ShoonyaGL</Filter>
     </ClCompile>
+    <ClCompile Include="ShoonyaGL\src\sglpch.cpp" />
   </ItemGroup>
 </Project>

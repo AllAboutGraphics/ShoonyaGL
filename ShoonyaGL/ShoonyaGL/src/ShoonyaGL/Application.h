@@ -1,4 +1,5 @@
 #pragma once
+#include "sglpch.h"
 #include "Core.h"
 
 namespace SGL

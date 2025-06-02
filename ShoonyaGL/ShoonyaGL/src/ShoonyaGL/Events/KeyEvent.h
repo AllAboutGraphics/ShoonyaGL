@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace SGL
 {
 	class SGL_API KeyEvent : public Event

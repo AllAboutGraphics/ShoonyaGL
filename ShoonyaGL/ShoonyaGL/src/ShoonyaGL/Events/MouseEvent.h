@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace SGL
 {
 	class SGL_API MouseMovedEvent : public Event

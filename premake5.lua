@@ -18,6 +18,9 @@ project "ShoonyaGL"
 	targetdir ("ShoonyaGL/bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("ShoonyaGL/bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "sglpch.h"
+	pchsource "ShoonyaGL/ShoonyaGL/src/sglpch.cpp"
+
 	files
 	{
 		"%{prj.name}/%{prj.name}/src/**.h",

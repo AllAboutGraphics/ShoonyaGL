@@ -76,7 +76,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>sglpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;SGL_DEBUG;SGL_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -104,7 +105,8 @@ IF EXIST bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bi
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>sglpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;SGL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -130,7 +132,8 @@ IF EXIST bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I 
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>sglpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -158,10 +161,14 @@ IF EXIST bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\KeyEvent.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\MouseEvent.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Log.h" />
+    <ClInclude Include="ShoonyaGL\src\sglpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Application.cpp" />
     <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Log.cpp" />
+    <ClCompile Include="ShoonyaGL\src\sglpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
