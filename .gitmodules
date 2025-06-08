@@ -1,3 +1,6 @@
 [submodule "ShoonyaGL/Vendor/spdlog"]
 	path = ShoonyaGL/Vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "ShoonyaGL/Vendor/GLFW"]
+	path = ShoonyaGL/Vendor/GLFW
+	url = https://github.com/TheCherno/GLFW
