@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>sglpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;SGL_DEBUG;SGL_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -96,6 +96,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -109,7 +110,7 @@ IF EXIST bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bi
       <PrecompiledHeaderFile>sglpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;SGL_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -123,6 +124,7 @@ IF EXIST bin\Debug-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bi
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -136,7 +138,7 @@ IF EXIST bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I 
       <PrecompiledHeaderFile>sglpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SGL_PLATFORM_WINDOWS;SGL_BUILD_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Vendor\spdlog\include;ShoonyaGL\src;Vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -144,6 +146,7 @@ IF EXIST bin\Release-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I 
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ImportLibrary>bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
@@ -152,6 +155,7 @@ IF EXIST bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ShoonyaGL\src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Application.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Core.h" />
@@ -161,14 +165,21 @@ IF EXIST bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\KeyEvent.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Events\MouseEvent.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Log.h" />
+    <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Window.h" />
     <ClInclude Include="ShoonyaGL\src\sglpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ShoonyaGL\src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Application.cpp" />
     <ClCompile Include="ShoonyaGL\src\ShoonyaGL\Log.cpp" />
     <ClCompile Include="ShoonyaGL\src\sglpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

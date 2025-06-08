@@ -10,6 +10,13 @@ workspace "ShoonyaGL"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories related to root folder (Solution Directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "ShoonyaGL/Vendor/GLFW/include"
+
+--include "ShoonyaGL/Vendor/GLFW"
+include "ShoonyaGL/Vendor/GLFW"
+
 project "ShoonyaGL"
 	location "ShoonyaGL"
 	kind "SharedLib"
@@ -30,8 +37,15 @@ project "ShoonyaGL"
 	includedirs
 	{
 		"%{prj.name}/Vendor/spdlog/include",
-		"%{prj.name}/ShoonyaGL/src"
+		"%{prj.name}/ShoonyaGL/src",
+		"%{IncludeDir.GLFW}"
 	}
+
+	links
+    {
+        "GLFW",
+        "opengl32.lib"
+    }
 
 	filter "system:windows"
 		cppdialect "C++20"

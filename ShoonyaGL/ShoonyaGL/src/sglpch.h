@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "ShoonyaGL/Log.h"
+
 #ifdef SGL_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
