@@ -2,6 +2,7 @@
 #include "sglpch.h"
 #include "Core.h"
 #include "Window.h"
+#include "Events/ApplicationEvent.h"
 
 namespace SGL
 {
@@ -16,6 +17,9 @@ namespace SGL
 		private:
 			std::unique_ptr<Window> m_Window;
 			bool m_Running = true;
+
+			void OnEvent(Event& e);
+			bool OnWindowCloseEvent(WindowCloseEvent& e);
 	};
 
 	//To be defined in client

@@ -40,5 +40,15 @@ namespace SGL
 			};
 
 			WindowData m_Data;
+
+			//Setup GLFW Callbacks
+			void SetupGLFWEventsCallbacks();
+			void SetupWindowSizeCallback();
+			void SetupWindowCloseCallback();
+			void SetupWindowKeyCallback();
+			void SetupWindowMouseButtonCallback();
+			void SetupWindowMouseScrollCallback();
+			void SetupWindowCursorPositionCallback();
+			void SetupErrorCallback();
 	};
 }
