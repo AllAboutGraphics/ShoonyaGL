@@ -2,7 +2,7 @@
 
 #include "ShoonyaGL/Window.h"
 
-#include <GLFW/glfw3.h>
+#include "Platform/Windows/WindowEventListener.h"
 
 namespace SGL
 {
@@ -28,27 +28,7 @@ namespace SGL
 
 		private:
 			GLFWwindow* m_Window;
-
-			struct WindowData
-			{
-				std::string Title;
-				unsigned int Width;
-				unsigned int Height;
-				bool VSync;
-
-				EventCallbackFn EventCallback;
-			};
-
 			WindowData m_Data;
-
-			//Setup GLFW Callbacks
-			void SetupGLFWEventsCallbacks();
-			void SetupWindowSizeCallback();
-			void SetupWindowCloseCallback();
-			void SetupWindowKeyCallback();
-			void SetupWindowMouseButtonCallback();
-			void SetupWindowMouseScrollCallback();
-			void SetupWindowCursorPositionCallback();
-			void SetupErrorCallback();
+			WindowEventListener m_WindowEventListener;
 	};
 }

@@ -47,6 +47,7 @@
       <Filter>ShoonyaGL</Filter>
     </ClInclude>
     <ClInclude Include="ShoonyaGL\src\sglpch.h" />
+    <ClInclude Include="ShoonyaGL\src\Platform\Windows\WindowEventListener.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ShoonyaGL\src\Platform\Windows\WindowsWindow.cpp">
@@ -59,5 +60,6 @@
       <Filter>ShoonyaGL</Filter>
     </ClCompile>
     <ClCompile Include="ShoonyaGL\src\sglpch.cpp" />
+    <ClCompile Include="ShoonyaGL\src\Platform\Windows\WindowEventListener.cpp" />
   </ItemGroup>
 </Project>

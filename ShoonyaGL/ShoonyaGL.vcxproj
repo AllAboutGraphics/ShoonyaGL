@@ -167,6 +167,7 @@ IF EXIST bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Log.h" />
     <ClInclude Include="ShoonyaGL\src\ShoonyaGL\Window.h" />
     <ClInclude Include="ShoonyaGL\src\sglpch.h" />
+    <ClInclude Include="ShoonyaGL\src\Platform\Windows\WindowEventListener.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ShoonyaGL\src\Platform\Windows\WindowsWindow.cpp" />
@@ -175,6 +176,7 @@ IF EXIST bin\Dist-windows-x86_64\ShoonyaGL\ShoonyaGL.dll\ (xcopy /Q /E /Y /I bin
     <ClCompile Include="ShoonyaGL\src\sglpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="ShoonyaGL\src\Platform\Windows\WindowEventListener.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Vendor\GLFW\GLFW.vcxproj">
