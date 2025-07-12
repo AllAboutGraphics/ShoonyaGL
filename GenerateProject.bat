@@ -7,5 +7,5 @@ git submodule update
 
 echo Submodules initialized and updated successfully.
 
-call Vendor\bin\premake5.exe vs2022
+call dependencies\premake\premake5.exe vs2022
 PAUSE
