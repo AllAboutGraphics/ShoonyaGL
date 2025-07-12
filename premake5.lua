@@ -51,6 +51,7 @@ project "ShoonyaGL"
 		cppdialect "C++20"
 		staticruntime "On"
 		systemversion "latest"
+		buildoptions "/utf-8"
 
 		defines
 		{
@@ -111,6 +112,7 @@ project "Sandbox"
 		cppdialect "C++20"
 		staticruntime "On"
 		systemversion "latest"
+		buildoptions "/utf-8"
 
 		defines
 		{
@@ -119,7 +121,7 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "SGL_DEBUG"
-		buildoptions "/MDs"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
