@@ -69,14 +69,17 @@ project "ShoonyaGL"
 
 	filter "configurations:Debug"
 		defines "SGL_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "SGL_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
-	filter "configurations:Debug"
+	filter "configurations:Dist"
 		defines "SGL_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -96,7 +99,6 @@ project "Sandbox"
 	includedirs
 	{
 		"ShoonyaGL/Vendor/spdlog/include",
-		--"E:/OpenGL/MyGraphicsEngines/ShoonyaGL/ShoonyaGL/Vendor/spdlog/include",
 		"ShoonyaGL/ShoonyaGL/src"
 	}
 
@@ -117,12 +119,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "SGL_DEBUG"
+		buildoptions "/MDs"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "SGL_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Debug"
 		defines "SGL_DIST"
+		buildoptions "/MD"
 		optimize "On"
